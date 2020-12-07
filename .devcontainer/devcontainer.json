@@ -1,0 +1,14 @@
+{
+    "name": "texlive-ja",
+    "dockerComposeFile": "docker-compose.yml",
+    "extensions": [
+        "ms-ceintl.vscode-language-pack-ja",
+        "hediet.vscode-drawio",
+        "oderwat.indent-rainbow",
+        "james-yu.latex-workshop",
+        "donjayamanne.githistory"
+    ],
+    "service": "texlive-ja",
+    "remoteUser": "texlive",
+    "workspaceFolder": "/workspace"
+}
