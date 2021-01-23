@@ -1,0 +1,39 @@
+{
+  "plugins": [
+    "latex2e"
+  ],
+  "rules": {
+    "preset-ja-engineering-paper": true,
+    "preset-ja-technical-writing": {
+      "ja-no-mixed-period": {
+        "periodMark": "．"
+      },
+      "max-kanji-continuous-len": false,
+      "sentence-length": false,
+      "ja-no-redundant-expression": {
+        "dictOptions": {
+          "dict5": {
+            "allows": [
+              "/^識別を行[ぁ-ん]/"
+            ]
+          }
+        }
+      },
+      "no-exclamation-question-mark": false,
+      "max-comma": false
+    },
+    "preset-japanese": {
+      "sentence-length": false
+    }
+  },
+  "filters": {
+    "comments": {
+      // enable comment directive
+      // if comment has the value, then enable textlint rule
+      "enablingComment": "textlint-enable",
+      // disable comment directive
+      // if comment has the value, then disable textlint rule
+      "disablingComment": "textlint-disable"
+    }
+  }
+}
