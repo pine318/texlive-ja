@@ -1,3 +1,4 @@
 {
-    "latex-workshop.latexindent.path": "/usr/local/bin/latexindent",
+    "latex-workshop.docker.enabled": true,
+    "latex-workshop.docker.image.latex": "pine318/texlive-ja"
 }

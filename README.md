@@ -3,8 +3,8 @@
 ## 使い方
 
 1. `git clone https://github.com/pine18/texlive-ja`
-2. 対象ファイルを配置
-3. `Ctrl+Shift+p`で`Remote - Containers: Open Folder in Container`選択
+2. README.mdと.gitを削除．（使用しないなら）.devcontainerも削除
+3. texファイルを配置
 
 ## 使用パッケージ
 
@@ -19,7 +19,7 @@
 - latexindent
 - pdfcrop
 
-### Visual Studio Code
+### Visual Studio Code(devcontainer)
 
 - ms-ceintl.vscode-language-pack-ja
 - hediet.vscode-drawio
