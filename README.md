@@ -1,10 +1,25 @@
 # TeXLive日本語環境コンテナ
 
+[![dockeri.co](https://dockeri.co/image/pine318/texlive-ja)](https://hub.docker.com/repository/docker/pine318/texlive-ja)
+
 ## 使い方
 
 1. `git clone https://github.com/pine18/texlive-ja`
 2. README.mdと.gitを削除．（使用しないなら）.devcontainerも削除
 3. texファイルを配置
+
+## latexdiff
+
+- 修正前を赤文字，修正後を青文字にし，差分を表示
+- `scripts`内にスクリプトを配置
+
+### 使用法（gitを用いた差分表示）
+
+- rev1，rev2にコミットIDやファイル名を入れる
+
+```sh
+./scripts/ldiff.sh [rev1] [rev2]
+```
 
 ## textlint
 

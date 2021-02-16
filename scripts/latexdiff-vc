@@ -1,0 +1,4 @@
+#!/bin/sh
+
+docker_image="pine318/texlive-ja:latest"
+docker run -i --rm -u "$(id -u):$(id -g)" -w "$(pwd)" -v "$(pwd):$(pwd)" ${docker_image} latexdiff-vc "$@"
