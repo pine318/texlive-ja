@@ -50,6 +50,7 @@ RUN tlmgr init-usertree \
     latexmk \
     latexindent \
     pdfcrop \
+    latexdiff \
     && tlmgr path add \
     && rm -fr /tmp/install-tl-unx
 

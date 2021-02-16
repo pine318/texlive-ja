@@ -30,11 +30,4 @@
 - latexmk
 - latexindent
 - pdfcrop
-
-### Visual Studio Code(devcontainer)
-
-- ms-ceintl.vscode-language-pack-ja
-- hediet.vscode-drawio
-- oderwat.indent-rainbow
-- james-yu.latex-workshop
-- donjayamanne.githistory
+- latexdiff
