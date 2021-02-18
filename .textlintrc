@@ -3,6 +3,7 @@
     "latex2e"
   ],
   "rules": {
+    // ja
     "preset-ja-engineering-paper": true,
     "preset-ja-technical-writing": {
       "ja-no-mixed-period": {
@@ -16,6 +17,9 @@
     "preset-japanese": {
       "sentence-length": false
     }
+    // // en
+    // "ginger": true,
+    // "en-spell": true
   },
   "filters": {
     "comments": {
