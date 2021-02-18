@@ -1,0 +1,7 @@
+figureTitle: "Fig."
+figPrefix: "Fig."
+tableTitle: "TABLE"
+tblPrefix: "TABLE"
+tblLabels: roman
+eqnPrefix: "eq."
+titleDelim: " "

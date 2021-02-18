@@ -1,0 +1,11 @@
+from: latex
+to: docx
+reference-doc: pandoc/myref.docx
+bibliography: main.bib
+csl: pandoc/ieee/ieee.csl
+standalone: true
+filters:
+  - pandoc-crossref
+citeproc: true
+metadata:
+  crossrefYaml: pandoc/ieee/crossref.yml
