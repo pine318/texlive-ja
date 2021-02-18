@@ -1,0 +1,3 @@
+#!/bin/sh
+
+docker run -i --rm -u "$(id -u):$(id -g)" -w "$(pwd)" -v "$(pwd):$(pwd)" pine318/texlive-ja:latest latexmk "$@"

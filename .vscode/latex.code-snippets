@@ -1,0 +1,78 @@
+{
+	// common
+	"disable_textlint": {
+		"prefix": "disable_textlint",
+		"body": [
+			"$LINE_COMMENT textlint-disable",
+			"$TM_SELECTED_TEXT",
+			"$LINE_COMMENT textlint-enable"
+		],
+		"description": "Disable textlint for the selection"
+	},
+	"subfiles_preamble": {
+		"prefix": "subfiles_preamble",
+		"body": [
+			"%! TEX root = ../main.tex",
+			"\\documentclass[main]{subfiles}",
+			"",
+			"\\begin{document}",
+			"",
+			"\\end{document}"
+		],
+		"description": "insert preamble for subfiles"
+	},
+	// IPSJ
+	"insert_table": {
+		"prefix": "table",
+		"body": [
+			"\\begin{table}[tb]",
+			"\t\\caption{}",
+			"\t\\ecaption{}",
+			"\t\\label{tbl:}",
+			"\t\\begin{tabular}{}",
+			"\t\\end{tabular}",
+			"\\end{table}"
+		],
+		"description": "Insert table"
+	},
+	"insert_figure": {
+		"prefix": "figure",
+		"body": [
+			"\\begin{figure}[tb]",
+			"\t\\centering",
+			"\t\\includegraphics[width=\\linewidth]{}",
+			"\t\\caption{}",
+			"\t\\ecaption{}",
+			"\t\\label{fig:}",
+			"\\end{figure}",
+			""
+		],
+		"description": "insert figure"
+	},
+	// // IEEE
+	// "insert_table": {
+	// 	"prefix": "table",
+	// 	"body": [
+	// 		"\\begin{table}[htbp]",
+	// 		"\t\\caption{}",
+	// 		"\t\\label{tbl:}",
+	// 		"\t\\begin{tabular}{}",
+	// 		"\t\\end{tabular}",
+	// 		"\\end{table}"
+	// 	],
+	// 	"description": "Insert table"
+	// },
+	// "insert_figure": {
+	// 	"prefix": "figure",
+	// 	"body": [
+	// 		"\\begin{figure}[htbp]",
+	// 		"\t\\centering",
+	// 		"\t\\includegraphics[width=\\linewidth]{}",
+	// 		"\t\\caption{}",
+	// 		"\t\\label{fig:}",
+	// 		"\\end{figure}",
+	// 		""
+	// 	],
+	// 	"description": "insert figure"
+	// },
+}
