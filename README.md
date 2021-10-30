@@ -4,7 +4,7 @@
 
 ## 使い方
 
-1. `git clone https://github.com/pine18/texlive-ja`
+1. `git clone https://github.com/pine318/texlive-ja`
 2. README.mdと.gitを削除．（使用しないなら）.devcontainerも削除
 3. texファイルを配置
 

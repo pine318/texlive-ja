@@ -47,6 +47,7 @@ RUN tlmgr init-usertree \
     collection-langjapanese \
     collection-latexextra \
     collection-mathscience \
+    newtx \
     latexmk \
     latexindent \
     pdfcrop \
