@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "pine318 <pine181818@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "textlint": "^12.0.2",
+    "textlint": "^14.0.4",
     "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-plugin-latex2e": "^1.1.4",
-    "textlint-rule-preset-ja-engineering-paper": "^1.0.3",
-    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
-    "textlint-rule-preset-japanese": "^7.0.0"
-  }
+    "textlint-plugin-latex2e": "^1.2.1",
+    "textlint-rule-preset-ja-engineering-paper": "^1.0.4",
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
+    "textlint-rule-preset-japanese": "^10.0.3"
+  },
+  "repository": "https://github.com/pine318/texlive-ja"
 }

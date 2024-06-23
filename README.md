@@ -31,7 +31,7 @@
 ### 導入法
 
 1. VSCode用拡張機能（[vscode-textlint](https://github.com/taichi/vscode-textlint)）をインストール
-2. `npm install`で関連パッケージをインストール
+2. `yarn install`で関連パッケージをインストール
 
 ## 使用パッケージ
 
