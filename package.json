@@ -9,7 +9,7 @@
   "author": "pine318 <pine181818@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "textlint": "^14.0.4",
+    "textlint": "^14.4.0",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-plugin-latex2e": "^1.2.1",
     "textlint-rule-preset-ja-engineering-paper": "^1.0.4",

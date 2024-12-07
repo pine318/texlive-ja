@@ -1,4 +1,138 @@
 {
     "latex-workshop.docker.enabled": true,
-    "latex-workshop.docker.image.latex": "pine318/texlive-ja"
+    "latex-workshop.docker.image.latex": "pine318/texlive-ja",
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.fileTypes": [
+        "%DOCFILE%.aux",
+        "%DOCFILE%.blg",
+        "%DOCFILE%.idx",
+        "%DOCFILE%.ind",
+        "%DOCFILE%.lof",
+        "%DOCFILE%.lot",
+        "%DOCFILE%.out",
+        "%DOCFILE%.acn",
+        "%DOCFILE%.acr",
+        "%DOCFILE%.alg",
+        "%DOCFILE%.glg",
+        "%DOCFILE%.glo",
+        "%DOCFILE%.gls",
+        "%DOCFILE%.fls",
+        "%DOCFILE%.log",
+        "%DOCFILE%.fdb_latexmk",
+        "%DOCFILE%.snm",
+        "%DOCFILE%.synctex(busy)",
+        "%DOCFILE%.synctex.gz(busy)",
+        "%DOCFILE%.nav",
+        "%DOCFILE%.vrb",
+        "%DOCFILE%.dvi",
+    ],
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "Default",
+            "tools": [
+                "Latexmk (Default)"
+            ]
+        },
+        // XeLaTeX で書かれた文書のビルドレシピ
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "Latexmk (XeLaTeX)"
+            ]
+        },
+        // LaTeX(upLaTeX) で書かれた文書のビルドレシピ
+        {
+            "name": "upLaTeX",
+            "tools": [
+                "Latexmk (upLaTeX)"
+            ]
+        },
+        // LaTeX(pLaTeX) で書かれた文書のビルドレシピ
+        {
+            "name": "pLaTeX",
+            "tools": [
+                "Latexmk (pLaTeX)"
+            ]
+        },
+        // LuaLaTeX で書かれた文書のビルドレシピ
+        {
+            "name": "LuaLaTeX",
+            "tools": [
+                "Latexmk (LuaLaTeX)"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "args": [
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "name": "Latexmk (Default)"
+        },
+        // latexmk を利用した xelatex によるビルドコマンド
+        {
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "name": "Latexmk (XeLaTeX)"
+        },
+        // latexmk を利用した uplatex によるビルドコマンド
+        {
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-latex='uplatex'",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "name": "Latexmk (upLaTeX)"
+        },
+        // latexmk を利用した platex によるビルドコマンド
+        {
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-latexoption='-kanji=utf8 -no-guess-input-env'",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "name": "Latexmk (pLaTeX)"
+        },
+        // latexmk を利用した lualatex によるビルドコマンド
+        {
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-lualatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "name": "Latexmk (LuaLaTeX)"
+        }
+    ],
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
 }
