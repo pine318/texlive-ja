@@ -1,4 +1,3 @@
-version: "3"
 services:
   texlive-ja:
     image: pine318/texlive-ja
