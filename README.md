@@ -23,6 +23,16 @@ docker pull pine318/texlive-ja
 2. README.mdと.gitを削除．（使用しないなら）.devcontainerも削除
 3. texファイルを配置
 
+## scriptsのPATH設定（mise）
+
+- `scripts`内のラッパー（`latexmk`，`latexdiff`，`latexdiff-vc`，`ldiff.sh`）はDockerコンテナ内のコマンドを実行する
+- [mise](https://mise.jdx.dev/)を使うと，リポジトリ内で`scripts`が自動的に`PATH`へ追加される（設定は`mise.toml`）
+
+```sh
+mise trust
+latexmk main.tex
+```
+
 ## latexdiff
 
 - 修正前を赤文字，修正後を青文字にし，差分を表示
