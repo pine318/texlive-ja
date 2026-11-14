@@ -1,10 +1,14 @@
 {
     "name": "texlive-ja",
     "dockerComposeFile": "docker-compose.yml",
-    "extensions": [
-        "james-yu.latex-workshop",
-    ],
     "service": "texlive-ja",
     "remoteUser": "texlive",
-    "workspaceFolder": "/workspace"
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "james-yu.latex-workshop"
+            ]
+        }
+    }
 }

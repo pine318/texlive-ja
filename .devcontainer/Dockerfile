@@ -1,9 +1,14 @@
-FROM perl:5-buster
+FROM perl:5-trixie
+
+LABEL org.opencontainers.image.title="texlive-ja" \
+      org.opencontainers.image.description="TeX Live Japanese environment" \
+      org.opencontainers.image.source="https://github.com/pine318/texlive-ja"
 
 ARG USERNAME=texlive
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ARG USER_GECOS=TeXLive
+ARG TL_MIRROR=https://mirror.ctan.org/systems/texlive/tlnet
 
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd \
@@ -12,34 +17,34 @@ RUN groupadd --gid $USER_GID $USERNAME \
     --gid $USER_GID \
     -c "$USER_GECOS" \
     -m $USERNAME
+
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-    apt-utils \
     ghostscript \
-    vim \
-    && apt-get install -y sudo \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME \
-    && apt-get -y install --no-install-recommends \
-    locales \
     less \
-    && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
-    && echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen \
-    && locale-gen
+    locales \
+    sudo \
+    vim \
+    && echo "$USERNAME ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && sed -i -e 's/^# *\(en_US.UTF-8 UTF-8\)/\1/' -e 's/^# *\(ja_JP.UTF-8 UTF-8\)/\1/' /etc/locale.gen \
+    && locale-gen \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /tmp/install-tl-unx \
-    && curl -Ls http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar -xz -C /tmp/install-tl-unx --strip-components=1 \
+    && curl -fsSL ${TL_MIRROR}/install-tl-unx.tar.gz | tar -xz -C /tmp/install-tl-unx --strip-components=1 \
     && printf "%s\n" \
     "selected_scheme scheme-basic" \
     "instopt_adjustpath 1" \
     "tlpdbopt_install_docfiles 0" \
     "tlpdbopt_install_srcfiles 0" \
     > /tmp/install-tl-unx/texlive.profile \
-    && /tmp/install-tl-unx/install-tl --profile=/tmp/install-tl-unx/texlive.profile
+    && /tmp/install-tl-unx/install-tl --profile=/tmp/install-tl-unx/texlive.profile --location ${TL_MIRROR} \
+    && rm -rf /tmp/install-tl-unx
 
-RUN tlmgr init-usertree \
-    && tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet \
+RUN tlmgr option repository ${TL_MIRROR} \
     && tlmgr update --self --all \
     && tlmgr install \
     collection-fontsrecommended \
@@ -52,18 +57,15 @@ RUN tlmgr init-usertree \
     latexindent \
     pdfcrop \
     latexdiff \
-    && tlmgr path add \
-    && rm -fr /tmp/install-tl-unx
+    && tlmgr path add
 
-RUN cpanm \
+# latexindent の依存モジュール
+RUN cpanm --notest \
     Log::Log4perl \
     Log::Dispatch::File \
     YAML::Tiny \
     File::HomeDir \
-    Unicode::GCString
-
-RUN apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    Unicode::GCString \
+    && rm -rf /root/.cpanm
 
 ENV LANG=ja_JP.UTF-8

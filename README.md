@@ -1,6 +1,19 @@
 # TeXLive日本語環境コンテナ
 
-[![dockeri.co](https://dockeri.co/image/pine318/texlive-ja)](https://hub.docker.com/repository/docker/pine318/texlive-ja)
+[![dockeri.co](https://dockeri.co/image/pine318/texlive-ja)](https://hub.docker.com/r/pine318/texlive-ja)
+
+## Dockerイメージ
+
+- Docker Hub: [pine318/texlive-ja](https://hub.docker.com/r/pine318/texlive-ja)
+- タグ
+  - `latest`：最新のTeX Live
+  - `2026` など：TeX Liveの年版
+- 対応アーキテクチャ：`linux/amd64`
+- ベースイメージ：`perl:5-trixie`（Debian 13）
+
+```sh
+docker pull pine318/texlive-ja
+```
 
 ## 使い方
 
@@ -32,6 +45,7 @@
 
 1. VSCode用拡張機能（[vscode-textlint](https://github.com/taichi/vscode-textlint)）をインストール
 2. `yarn install`で関連パッケージをインストール
+3. CLIで実行する場合は`npx textlint main.tex`
 
 ## 使用パッケージ
 
@@ -46,3 +60,4 @@
 - latexindent
 - pdfcrop
 - latexdiff
+- newtx

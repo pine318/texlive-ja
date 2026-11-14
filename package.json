@@ -9,12 +9,12 @@
   "author": "pine318 <pine181818@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "textlint": "^14.4.0",
-    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint": "^15.8.0",
+    "textlint-filter-rule-comments": "^1.3.0",
     "textlint-plugin-latex2e": "^1.2.1",
     "textlint-rule-preset-ja-engineering-paper": "^1.0.4",
-    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
-    "textlint-rule-preset-japanese": "^10.0.3"
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-preset-japanese": "^10.0.4"
   },
   "repository": "https://github.com/pine318/texlive-ja"
 }

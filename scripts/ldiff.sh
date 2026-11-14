@@ -8,7 +8,7 @@ pandocref="ipsj"
 # 差分tex作成(PDF)
 diff_tex=$(docker run -i --rm -u ${uid} -w "$(pwd)" -v "$(pwd):$(pwd)" pine318/texlive-ja:latest latexdiff-vc -e utf8 --git --flatten -t CFONT -r "$@" | cut -d" " -f 4)
 
-if [ $? = 0 ]; then
+if [ -n "${diff_tex}" ] && [ -f "${diff_tex}" ]; then
   # ファイル名から拡張子除去
   diffid=${diff_tex%.tex}
   # ファイル名変更
@@ -25,7 +25,7 @@ fi
 # 差分tex作成(docx)
 diff_tex=$(docker run -i --rm -u ${uid} -w "$(pwd)" -v "$(pwd):$(pwd)" pine318/texlive-ja:latest latexdiff-vc -e utf8 --git --flatten -t BOLD -r "$@" | cut -d" " -f 4)
 
-if [ $? = 0 ]; then
+if [ -n "${diff_tex}" ] && [ -f "${diff_tex}" ]; then
   # ファイル名から拡張子除去
   diffid=${diff_tex%.tex}
   # ファイル名変更
