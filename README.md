@@ -1,6 +1,8 @@
 # TeXLive日本語環境コンテナ
 
-[![dockeri.co](https://dockeri.co/image/pine318/texlive-ja)](https://hub.docker.com/r/pine318/texlive-ja)
+[![Docker Pulls](https://img.shields.io/docker/pulls/pine318/texlive-ja)](https://hub.docker.com/r/pine318/texlive-ja)
+[![Docker Image Version](https://img.shields.io/docker/v/pine318/texlive-ja/latest)](https://hub.docker.com/r/pine318/texlive-ja)
+[![Docker Image Size](https://img.shields.io/docker/image-size/pine318/texlive-ja/latest)](https://hub.docker.com/r/pine318/texlive-ja)
 
 ## Dockerイメージ
 
