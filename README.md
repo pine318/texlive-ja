@@ -8,22 +8,12 @@
 - タグ
   - `latest`：最新のTeX Live
   - `2026` など：TeX Liveの年版
-- 対応アーキテクチャ：`linux/amd64`，`linux/arm64`（Apple Silicon等）
+- 対応アーキテクチャ：`linux/amd64`
 - ベースイメージ：`perl:5-trixie`（Debian 13）
 
 ```sh
 docker pull pine318/texlive-ja
 ```
-
-### 自動ビルド
-
-GitHub Actions（`.github/workflows/docker-publish.yml`）で以下のタイミングにビルドし，Docker Hubへpushする．
-
-- `master`ブランチの`Dockerfile`変更時
-- 毎月1日（TeX Liveパッケージの最新化）
-- 手動実行（Actions画面の「Run workflow」）
-
-リポジトリのSecretsに`DOCKERHUB_USERNAME`と`DOCKERHUB_TOKEN`（Docker HubのPersonal Access Token）の登録が必要．
 
 ## 使い方
 
